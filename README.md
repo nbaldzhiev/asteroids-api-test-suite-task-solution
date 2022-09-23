@@ -7,7 +7,7 @@ A repository containing a Asteroids API Test Suite.
 **tldr:**
 
 ```
-$ git clone git@github.com:nbaldzhiev/asteroids-api-test-suite-task-solution.git && cd asteroids-api-test-suite-task-solution`
+$ git clone git@github.com:nbaldzhiev/asteroids-api-test-suite-task-solution.git && cd asteroids-api-test-suite-task-solution
 $ ./runner.sh
 ```
 
