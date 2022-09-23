@@ -7,6 +7,10 @@ import requests
 
 logging.basicConfig(level=logging.INFO)
 
+# TODO: Pull the version dynamically from the SBDB API in case such an endpoint is created
+CURRENT_API_VERSION = 1.4
+FULL_SOURCE_NAME = "NASA/JPL SBDB Close Approach Data API"
+
 
 class SBDBCloseApproachDataAPI(requests.Session):
     """This class implement an abstraction of the SBDB Close-Approach Data API."""
@@ -52,6 +56,7 @@ class SBDBCloseApproachDataAPI(requests.Session):
             self.endpoint_url,
             query_string,
         )
+        resp.raise_for_status()
         return resp
 
     def get_close_approach_data_deserialized_content(self, **kwargs) -> Dict:
@@ -63,3 +68,19 @@ class SBDBCloseApproachDataAPI(requests.Session):
             The deserialized content of the response.
         """
         return json.loads(self.get_close_approach_data_raw(**kwargs).content)
+
+    @staticmethod
+    def deserialize_response(response: requests.Response) -> Dict:
+        """Deserializes an existing response
+
+        Parameters
+        ----------
+        response : requests.Response
+            A Response object.
+
+        Returns
+        -------
+        Dict
+            A deserialized Response object.
+        """
+        return json.loads(response.content)
