@@ -4,6 +4,13 @@ A repository containing a Asteroids API Test Suite.
 
 ## Usage
 
+**tldr:**
+
+```
+$ git clone git@github.com:nbaldzhiev/asteroids-api-test-suite-task-solution.git && cd asteroids-api-test-suite-task-solution`
+$ ./runner.sh
+```
+
 * The tests are ran via the `runner.sh` script.
 * The `Dockerfile` contains the image build information.
 * The script `run_tests.sh` is inserted in the container and is ran there.
