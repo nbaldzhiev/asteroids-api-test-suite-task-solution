@@ -11,12 +11,14 @@ $ git clone git@github.com:nbaldzhiev/asteroids-api-test-suite-task-solution.git
 $ ./runner.sh
 ```
 
-* The tests are ran via the `runner.sh` script.
-* The `Dockerfile` contains the image build information.
-* The script `run_tests.sh` is inserted in the container and is ran there.
-* The results of the tests are copied from the docker container to the repository directory.
-* By default, an Allure web server is started with the report from the test suite execution. This is configurable.
-* By default, the docker image is built first, i.e. it is not implied that it already exists. This is configurable.
+What happens:
+1. A docker image gets built based on Dockerfile.
+  * By default, the docker image is built first, i.e. it is not implied that it already exists. This is configurable.
+2. A container gets started with the image.
+3. The tests are ran inside the container.
+4. An allure report server is started on the localhost based on the results copied from the container.
+  * By default, an Allure web server is started with the report from the test suite execution. This is configurable.
+5. The container is stopped and removed.
 
 It's recommended to create a python virtual environment using Python 3.8+ and install the dependencies in the file requirements.txt to ensure that all required packages are available.
 
