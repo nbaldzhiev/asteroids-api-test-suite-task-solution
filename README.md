@@ -2,6 +2,8 @@
 
 A repository containing a Asteroids API Test Suite.
 
+> **_NOTE:_** The bash scripts were developed on MacOS Monterey 12.6, so there could be some command differences with the shells of other OSs.
+
 ## Usage
 
 **tldr:**
